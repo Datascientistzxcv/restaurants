@@ -3,6 +3,10 @@ import {StyleSheet, Dimensions} from 'react-native'
 
 const {width, height} = Dimensions.get('window')
 
+export const marginLeftAuto = {
+  marginLeft: 'auto'
+}
+
 export const restaurantCard = StyleSheet.create({
   container: {
     margin: 20,
@@ -25,7 +29,8 @@ export const restaurantCard = StyleSheet.create({
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
     flexDirection: 'row',
-    padding: 10
+    padding: 10,
+    alignItems: 'baseline'
   },
   captionHeading: {
     flexDirection: 'row'
@@ -36,10 +41,26 @@ export const restaurantCard = StyleSheet.create({
     fontSize: 20
   },
   sub: {
-    marginLeft: 'auto',
+    ...marginLeftAuto,
     fontSize: 18
   },
-  rating: {
-    color:  'orange'
+  ratingContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 5
+  },
+  ratingTitle: {
+    color:'orange',
+    fontWeight:'bold',
+    fontSize: 18
+  },
+  distance: {
+    color: 'white',
+    height: 30,
+    borderRadius: 5,
+    padding: 5,
+    backgroundColor: 'rgba(0,0,0,0.3)',
+    fontSize: 15,
+    fontWeight: 'bold'
   }
 })

@@ -2,6 +2,7 @@ import React from 'react'
 import {View, Text} from 'react-native'
 import PropTypes from 'prop-types'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import {restaurantCard} from '../../assets/styles'
 
 const showRatings = rating => (
   [1, 2, 3, 4, 5].map(item => (
@@ -19,8 +20,8 @@ const showRatings = rating => (
 )
 
 const Ratings = props => (
-  <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
-    <Text style={{color:'orange', fontWeight:'bold', fontSize: 18}}>{props.rating}</Text>
+  <View style={restaurantCard.ratingContainer}>
+    <Text style={restaurantCard.ratingTitle}>{props.rating}</Text>
     {showRatings(props.rating)}
   </View>
 )
