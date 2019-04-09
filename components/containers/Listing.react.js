@@ -13,7 +13,8 @@ class ListingContainer extends Component {
     this.state = {data: [], page: 0, loading: true}
   }
 
-  search = (searchTerm) => {
+  search = (event) => {
+    console.log('-----', event.nativeEvent.text)
     // todo implement search
   }
 

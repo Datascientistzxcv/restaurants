@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
-import {View, Text} from 'react-native'
+import {View, Text, TextInput} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import TouchAble from './TouchAble.react'
 import header from '../../assets/styles/header'
 import PropTypes from 'prop-types'
 
 const Header = props => {
-  const {container, navBar, optionsGroup, searchOption, headerText} = header
+  const {container, navBar, optionsGroup, searchOption, headerText, searchInput} = header
   const {goto, search} = props
   const [isSearchBarShown, toggleSearchBar] = useState(false)
 
@@ -21,7 +21,12 @@ const Header = props => {
         <View style={optionsGroup}>
           {
             isSearchBarShown ?
-              <Text style={searchOption}>{'The search bar'}</Text> :
+              <TextInput
+                returnKeyLabel='search'
+                returnKeyType='go'
+                onSubmitEditing={search}
+                style={searchInput}
+              /> :
               <TouchAble onPress={() => toggleSearchBar(true)}>
                 <Icon name='md-search' size={25} color='white' style={searchOption}/>
               </TouchAble>

@@ -16,10 +16,23 @@ const header = StyleSheet.create({
   optionsGroup: {
     marginLeft: 'auto',
     flexDirection: 'row',
-    alignItems: 'baseline'
+    marginBottom: 5,
+    alignItems: 'center'
   },
   searchOption: {
-    marginRight: 15
+    marginRight: 20,
+  },
+  searchInput: {
+    borderWidth: 0,
+    borderBottomColor: 'white',
+    borderBottomWidth: 2,
+    width: width * 0.6,
+    // height: 20,
+    color: 'white',
+    padding: 0,
+    margin: 0,
+    marginLeft: 5,
+    marginRight: 20
   },
   headerText: {
     fontWeight: 'bold',

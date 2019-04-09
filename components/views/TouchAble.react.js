@@ -3,12 +3,12 @@ import {TouchableHighlight} from 'react-native'
 import PropTypes from 'prop-types'
 
 const TouchAble = props => {
-  const {style, onPress, underlayColor, children} = props
+  const {style = {}, onPress, underlayColor = 'rgba(247, 250, 255, 0.4)', children} = props
   return (
     <TouchableHighlight
-      style={style || {}}
+      style={style}
       onPress={onPress}
-      underlayColor={underlayColor || 'rgb(247, 250, 255, 0.4)'}>
+      underlayColor={underlayColor}>
       {children}
     </TouchableHighlight>
   )
