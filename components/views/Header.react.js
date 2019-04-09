@@ -2,12 +2,11 @@ import React, {useState} from 'react'
 import {View, Text} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import TouchAble from './TouchAble.react'
-import {
-  container, navBar, optionsGroup, searchOption, headerText
-} from '../../assets/styles/header'
+import header from '../../assets/styles/header'
 import PropTypes from 'prop-types'
 
 const Header = props => {
+  const {container, navBar, optionsGroup, searchOption, headerText} = header
   const {goto, search} = props
   const [isSearchBarShown, toggleSearchBar] = useState(false)
 

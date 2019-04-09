@@ -50,7 +50,7 @@ class ListingContainer extends Component {
               animating={loading}
               color='orange'
               size='large'
-              style={activityIndicator}
+              style={activityIndicator.main}
             /> :
             <Listing
               data={data} fetchMore={this.getData} goto={navigate}
