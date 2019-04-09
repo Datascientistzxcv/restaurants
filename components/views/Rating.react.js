@@ -2,7 +2,7 @@ import React from 'react'
 import {View, Text} from 'react-native'
 import PropTypes from 'prop-types'
 import Icon from 'react-native-vector-icons/Ionicons'
-import {restaurantCard} from '../../assets/styles'
+import restaurantCard from '../../assets/styles/restaurantCard'
 
 const showRatings = rating => (
   [1, 2, 3, 4, 5].map(item => (

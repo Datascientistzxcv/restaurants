@@ -1,30 +1,43 @@
-import React from 'react'
-import {View, Dimensions, Text} from 'react-native'
+import React, {useState} from 'react'
+import {View, Text} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
-
-const {width, height} = Dimensions.get('window')
+import TouchAble from './TouchAble.react'
+import {
+  container, navBar, optionsGroup, searchOption, headerText
+} from '../../assets/styles/header'
+import PropTypes from 'prop-types'
 
 const Header = props => {
+  const {goto, search} = props
+  const [isSearchBarShown, toggleSearchBar] = useState(false)
+
   return (
     <View
-      style={{backgroundColor: 'orange',
-        height: (height * 0.15),
-        width,
-        padding: 25
-      }}>
+      style={container}>
       <View
-        style={{
-          flexDirection: 'row'
-        }}>
-        <Icon name='md-arrow-back' size={25} color='white'/>
-        <View style={{marginLeft: 'auto', flexDirection: 'row'}}>
-          <Icon name='md-search' size={25} color='white' style={{marginRight: 15}}/>
+        style={navBar}>
+        <TouchAble onPress={() => goto('Home')}>
+          <Icon name='md-arrow-back' size={25} color='white'/>
+        </TouchAble>
+        <View style={optionsGroup}>
+          {
+            isSearchBarShown ?
+              <Text style={searchOption}>{'The search bar'}</Text> :
+              <TouchAble onPress={() => toggleSearchBar(true)}>
+                <Icon name='md-search' size={25} color='white' style={searchOption}/>
+              </TouchAble>
+          }
           <Icon name='md-options' size={25} color='white'/>
         </View>
       </View>
-      <Text style={{fontWeight: 'bold', fontSize: 32, color: 'white'}}>{'Restaurants'}</Text>
+      <Text style={headerText}>{'Restaurants'}</Text>
     </View>
   )
+}
+
+Header.propTypes = {
+  goto: PropTypes.func.isRequired,
+  search: PropTypes.func.isRequired
 }
 
 export default Header

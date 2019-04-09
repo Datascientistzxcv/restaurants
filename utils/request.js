@@ -30,7 +30,7 @@ const sendRequest = (url, method, data) => {
     },
     ...constructBody(method, data),
     credentials: 'include'
-  })
+  }).then(res => res.json())
 }
 
 export default sendRequest

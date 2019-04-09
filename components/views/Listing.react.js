@@ -1,13 +1,13 @@
 import React from 'react'
-import {FlatList, View, Text, Dimensions} from 'react-native'
+import {FlatList, View, Text} from 'react-native'
+import PropTypes from 'prop-types'
 import RestaurantCard from './RestaurantCard.react'
+import listing from '../../assets/styles/listing'
 
-const {width, height} = Dimensions.get('window')
-
-const keyExtractor = (item, index) => item.id
+const keyExtractor = (item) => item.id
 const EmptyList = () => (
-  <View style={{alignItems: 'center', justifyContent: 'center', height: height - (height * 0.2)}}>
-    <Text style={{color: 'red', fontSize: 25}}>{'Nothing to show'}</Text>
+  <View style={listing.emptyContainer}>
+    <Text style={listing.emptyText}>{'Nothing to show'}</Text>
   </View>
 )
 
@@ -22,5 +22,11 @@ const Listing = props => (
     }
   />
 )
+
+Listing.propTypes = {
+  data: PropTypes.array.isRequired,
+  goto: PropTypes.func.isRequired,
+  fetchMore: PropTypes.func.isRequired
+}
 
 export default Listing

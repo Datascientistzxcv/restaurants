@@ -1,13 +1,9 @@
 import {StyleSheet, Dimensions} from 'react-native'
-
+import {marginLeftAuto} from './shared'
 
 const {width, height} = Dimensions.get('window')
 
-export const marginLeftAuto = {
-  marginLeft: 'auto'
-}
-
-export const restaurantCard = StyleSheet.create({
+const restaurantCard = StyleSheet.create({
   container: {
     margin: 20,
     backgroundColor: 'white',
@@ -66,10 +62,4 @@ export const restaurantCard = StyleSheet.create({
   }
 })
 
-export const listing = StyleSheet.create({
-  container: {
-    flex: 1,
-    margin: 20
-  }
-
-})
+export default restaurantCard

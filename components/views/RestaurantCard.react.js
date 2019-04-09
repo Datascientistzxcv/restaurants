@@ -1,20 +1,20 @@
 import React from 'react'
-import {View, ImageBackground, Text, TouchableHighlight} from 'react-native'
+import {View, ImageBackground, Text} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import PropTypes from 'prop-types'
 import Ratings from './Rating.react'
-import {restaurantCard, marginLeftAuto} from '../../assets/styles'
-
-const trimText = text => text.length > 20 ? text.substring(0, 20) + '...' : text
+import TouchAble from '../views/TouchAble.react'
+import restaurantCard from '../../assets/styles/restaurantCard'
+import {marginLeftAuto} from '../../assets/styles/shared'
+import trimText from '../../utils/trimText'
 
 const RestaurantCard = props => {
   const {name, image_url, categories, rating, distance} = props.item
 
   return (
-    <TouchableHighlight
+    <TouchAble
       style={restaurantCard.container}
       onPress={() => {
-        console.log('-------')
         props.goto('Details', {name: 'Jane'})
       }}>
       <View>
@@ -38,7 +38,7 @@ const RestaurantCard = props => {
           <Ratings rating={rating} />
         </View>
       </View>
-    </TouchableHighlight>
+    </TouchAble>
   )
 }
 
