@@ -13,9 +13,20 @@ class ListingContainer extends Component {
     this.state = {data: [], page: 0, loading: true}
   }
 
-  search = (event) => {
-    console.log('-----', event.nativeEvent.text)
-    // todo implement search
+  search = async (event) => {
+    const searchTerm = event.nativeEvent.text
+    this.setState({page: 1, loading: true})
+
+    try {
+      const data = await request(`/search?location=NYC&term=${searchTerm}`, 'GET', null) //eslint-disable-line
+      this.setState({
+        data: data.businesses
+      })
+    } catch (err) {
+      console.warn('-----', err)
+    } finally {
+      this.setState({loading: false})
+    }
   }
 
   getData = async (page = this.state.page) => {
@@ -24,11 +35,10 @@ class ListingContainer extends Component {
     try {
       const data = await request(`/search?location=NYC&offset=${nextPage * 20}&term=restaurants`, 'GET', null) //eslint-disable-line
       this.setState({
-        data: [...this.state.data, ...data.businesses],
-        loading: false
+        data: [...this.state.data, ...data.businesses]
       })
-    } catch(err) {
-      console.log('-----', err)
+    } catch (err) {
+      console.warn('-----', err)
     } finally {
       this.setState({loading: false})
     }
@@ -44,7 +54,7 @@ class ListingContainer extends Component {
 
     return (
       <View>
-        <Header search={this.search} showSearchBar={showSearchBar} goto={navigate}/>
+        <Header search={this.search} showSearchBar={showSearchBar} goto={navigate} />
         {
           loading ?
             <ActivityIndicator
