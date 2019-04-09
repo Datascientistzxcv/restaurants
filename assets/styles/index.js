@@ -11,7 +11,7 @@ export const restaurantCard = StyleSheet.create({
   container: {
     margin: 20,
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderRadius: 5,
     elevation: 4,
     shadowOffset: {width: 5, height: 5},
     shadowColor: "grey",
@@ -38,7 +38,8 @@ export const restaurantCard = StyleSheet.create({
   main: {
     fontWeight: 'bold',
     color: 'black',
-    fontSize: 20
+    fontSize: 20,
+    width: width * 0.5
   },
   sub: {
     ...marginLeftAuto,
@@ -63,4 +64,12 @@ export const restaurantCard = StyleSheet.create({
     fontSize: 15,
     fontWeight: 'bold'
   }
+})
+
+export const listing = StyleSheet.create({
+  container: {
+    flex: 1,
+    margin: 20
+  }
+
 })

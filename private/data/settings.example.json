@@ -1,0 +1,4 @@
+{
+  "baseUrl": "YOUR_BACKEND_API_BASE_URL",
+  "apiKey": "YOUR_YELP_API_KEY"
+}
