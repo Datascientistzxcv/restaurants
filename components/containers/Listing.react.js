@@ -7,11 +7,7 @@ import PropTypes from 'prop-types'
 import activityIndicator from '../../assets/styles/activityIndicator'
 
 class ListingContainer extends Component {
-  constructor() {
-    super()
-
-    this.state = {data: [], page: 0, loading: true}
-  }
+  state = {data: [], page: 0, loading: true}
 
   search = async (event) => {
     const searchTerm = event.nativeEvent.text
