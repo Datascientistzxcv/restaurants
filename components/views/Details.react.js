@@ -40,7 +40,7 @@ const Details = props => {
           source={{uri: image_url}}
           style={details.banner}>
           <TouchAble onPress={() => props.navigation.goBack()}>
-            <Icon name='md-arrow-back' size={25} color='white'/>
+            <Icon name='md-arrow-back' size={25} color='white' />
           </TouchAble>
           <Icon
             name={isFav ? 'ios-heart' : 'ios-heart-empty'}
@@ -61,7 +61,7 @@ const Details = props => {
               </View>
               <View style={flexCenter}>
                 <Ratings rating={rating} />
-                <View style={details.dot}/>
+                <View style={details.dot} />
                 <Text style={details.baseFont}>{
                   categories[0] ? categories[0].title : ''}
                 </Text>
@@ -113,7 +113,7 @@ const Details = props => {
                 style={details.listItemImage}
               />
               <Text style={details.listItemText}>{'Book a table with Opentable'}</Text>
-              <Icon name='ios-arrow-forward' size={25} color='grey' style={marginLeftAuto}/>
+              <Icon name='ios-arrow-forward' size={25} color='grey' style={marginLeftAuto} />
             </View>
           </TouchAble>
           <Divider />
@@ -124,7 +124,7 @@ const Details = props => {
                 style={details.listItemImage}
               />
               <Text style={details.listItemText}>{'Request a ride with Uber'}</Text>
-              <Icon name='ios-arrow-forward' size={25} color='grey' style={marginLeftAuto}/>
+              <Icon name='ios-arrow-forward' size={25} color='grey' style={marginLeftAuto} />
             </View>
           </TouchAble>
           <Divider />
@@ -138,37 +138,40 @@ const Details = props => {
               <Text style={details.listItemText}>
                 {`${is_closed ? 'Closed' : 'Open Now (07-24h)'}`}
               </Text>
-              <Icon name='ios-arrow-down' size={25} color='grey' style={marginLeftAuto}/>
+              <Icon name='ios-arrow-down' size={25} color='grey' style={marginLeftAuto} />
             </View>
           </TouchAble>
           <Divider />
           <TouchAble onPress={() => console.warn('Not implemented')}>
             <View style={{...details.listItem, paddingBottom: 10}}>
-              <MaterialIcon name='library' size={25} color='grey' style={details.listItemImage}/>
+              <MaterialIcon name='library' size={25} color='grey' style={details.listItemImage} />
               <Text style={details.listItemText}>{'Menu'}</Text>
-              <MaterialIcon name='link' size={25} color='grey' style={marginLeftAuto}/>
+              <MaterialIcon name='link' size={25} color='grey' style={marginLeftAuto} />
             </View>
           </TouchAble>
           <Divider />
-          <MapView
-            initialRegion={{
-              latitude: 37.78825,
-              longitude: -122.4324,
-              latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421
-            }}>
-            <Marker
+          <View style={centerAlign}>
+            <MapView
+              style={details.mapContainer}
+              initialRegion={{
+                latitude: latitude,
+                longitude: longitude,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421
+              }}>
+              {/* <Marker
               draggable
               key={id}
               coordinate={`${latitude},${longitude}`}
               title={name}
               description={''}
-            />
-          </MapView>
+            /> */}
+            </MapView>
+          </View>
         </View>
       </ScrollView>
       <View>
-        <Divider/>
+        <Divider />
         <TouchAble onPress={() => console.warn('Not implemented')}>
           <Text style={details.footerText}>
             {'VIEW OFFERS'}

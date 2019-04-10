@@ -80,6 +80,12 @@ const listing = StyleSheet.create({
     marginRight: 15,
     width: 25,
     height: 25
+  },
+  mapContainer: {
+    height: 400,
+    width: width - 40,
+    padding: 20,
+    marginTop: 10
   }
 })
 
