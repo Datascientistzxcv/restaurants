@@ -1,7 +1,7 @@
 import React from 'react'
 import {ScrollView, View, ImageBackground, Text, Image} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
-import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import TouchAble from './TouchAble.react'
 import Ratings from './Rating.react'
 import Divider from './Divider.react'
@@ -9,7 +9,7 @@ import restaurantCard from '../../assets/styles/restaurantCard'
 import trimText from '../../utils/trimText'
 
 const Details = props => {
-  const {image_url, distance, isFav, categories, rating, name} = props.data
+  const {image_url, distance, isFav, categories, rating, name, is_closed} = props.data
 
   return (
     <View style={{flex: 1}}>
@@ -67,42 +67,75 @@ const Details = props => {
           <Divider />
           <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 20}}>
             <TouchAble>
-              <View style={{ alignItems: 'center'}}>
+              <View style={{alignItems: 'center'}}>
                 <Icon name='md-call' size={35} color='grey' />
                 <Text style={{fontSize: 18}}>{'Call'}</Text>
               </View>
             </TouchAble>
             <TouchAble>
-            <View style={{ alignItems: 'center'}}>
+              <View style={{alignItems: 'center'}}>
                 <Icon name='md-globe' size={35} color='grey' />
                 <Text style={{fontSize: 18}}>{'Website'}</Text>
               </View>
             </TouchAble>
             <TouchAble>
-              <View style={{ alignItems: 'center'}}>
+              <View style={{alignItems: 'center'}}>
                 <MaterialIcon name='directions' size={35} color='grey' />
                 <Text style={{fontSize: 18}}>{'Directions'}</Text>
               </View>
             </TouchAble>
             <TouchAble>
-              <View style={{ alignItems: 'center'}}>
+              <View style={{alignItems: 'center'}}>
                 <Icon name='md-chatboxes' size={35} color='grey' />
-                <Text style={{fontSize: 18}}>{'Directions'}</Text>
+                <Text style={{fontSize: 18}}>{'Invite'}</Text>
               </View>
             </TouchAble>
           </View>
           <Divider />
+          <TouchAble>
+            <View style={{flexDirection: 'row', paddingTop: 20, paddingBottom: 20}}>
+              <Image />
+              <Text style={{fontSize: 18, color: '#414041'}}>{'Book a table with Opentable'}</Text>
+              <Icon name='ios-arrow-forward' size={25} color='grey' style={{marginLeft: 'auto'}}/>
+            </View>
+          </TouchAble>
+          <Divider />
+          <TouchAble>
+            <View style={{flexDirection: 'row', paddingTop: 20, paddingBottom: 20, alignItems: 'center'}}>
+              <Image />
+              <Text style={{fontSize: 18, color: '#414041'}}>{'Request a ride with Uber'}</Text>
+              <Icon name='ios-arrow-forward' size={25} color='grey' style={{marginLeft: 'auto'}}/>
+            </View>
+          </TouchAble>
+          <Divider />
+          <TouchAble>
+            <View style={{flexDirection: 'row', paddingTop: 20, paddingBottom: 20, alignItems: 'center'}}>
+              <MaterialIcon name='clock-outline' size={25} color='grey' style={{marginRight: 15}}/>
+              <Text style={{fontSize: 18, color: '#414041'}}>{`${is_closed ? 'Closed' : 'Open Now (07-24h)'}`}</Text>
+              <Icon name='ios-arrow-down' size={25} color='grey' style={{marginLeft: 'auto'}}/>
+            </View>
+          </TouchAble>
+          <Divider />
+          <TouchAble>
+            <View style={{flexDirection: 'row', paddingTop: 20, paddingBottom: 10, alignItems: 'center'}}>
+              <MaterialIcon name='library' size={25} color='grey' style={{marginRight: 15}}/>
+              <Text style={{fontSize: 18, color: '#414041'}}>{'Menu'}</Text>
+              <MaterialIcon name='link' size={25} color='grey' style={{marginLeft: 'auto'}}/>
+            </View>
+          </TouchAble>
         </View>
       </ScrollView>
-      <View>
-        <Divider/>
-        <Text style={{alignSelf: 'center', backgroundColor: 'white', padding: 20, color: 'orange'}}>
-          {'VIEW OFFERS'}
-        </Text>
-      </View>
-
+      <TouchAble>
+        <View>
+          <Divider/>
+          <Text style={{alignSelf: 'center', backgroundColor: 'white', padding: 20, color: 'orange', fontSize: 20, fontWeight: 'bold'}}>
+            {'VIEW OFFERS'}
+          </Text>
+        </View>
+      </TouchAble>
     </View>
   )
 }
+
 
 export default Details
