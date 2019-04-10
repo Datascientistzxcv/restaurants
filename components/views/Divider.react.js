@@ -1,25 +1,11 @@
 import React from 'react'
 import {View} from 'react-native'
-import PropTypes from 'prop-types'
+import divider from '../../assets/styles/divider'
 
-const Divider = props => {
-  const {color} = props
+const Divider = () => {
   return (
-    <View
-      style={{
-        borderBottomColor: color,
-        borderBottomWidth: 1
-      }}
-    />
+    <View style={divider.main}/>
   )
-}
-
-Divider.propTypes = {
-  color: PropTypes.string
-}
-
-Divider.defaultProps = {
-  color: '#e9ecef'
 }
 
 export default Divider
