@@ -16,7 +16,7 @@ A react native restaurant project
 
 
 # Getting started
-`NOTE`: A working knowledge of setting up a react-native project using react-native cli is required. Check (here)[https://facebook.github.io/react-native/] for how to do this.
+`NOTE`: A working knowledge of setting up a react-native project using react-native cli is required. Check [here](https://facebook.github.io/react-native/) for more on this.
 
 
 - clone the project `git clone https://github.com/larrystone/restaurants.git`
