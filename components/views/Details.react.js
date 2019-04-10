@@ -159,13 +159,13 @@ const Details = props => {
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421
               }}>
-              {/* <Marker
-              draggable
-              key={id}
-              coordinate={`${latitude},${longitude}`}
-              title={name}
-              description={''}
-            /> */}
+              <Marker
+                draggable
+                key={id}
+                coordinate={{latitude, longitude}}
+                title={name}
+                description={''}
+              />
             </MapView>
           </View>
         </View>
