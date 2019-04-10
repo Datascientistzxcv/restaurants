@@ -97,7 +97,7 @@ const Details = props => {
                 <Text style={details.baseFont}>{'Directions'}</Text>
               </View>
             </TouchAble>
-            <TouchAble>
+            <TouchAble onPress={() => console.warn('Not implemented')}>
               <View style={centerAlign}>
                 <Icon name='md-chatboxes' size={35} color='grey' />
                 <Text style={details.baseFont}>{'Invite'}</Text>
@@ -105,7 +105,7 @@ const Details = props => {
             </TouchAble>
           </View>
           <Divider />
-          <TouchAble>
+          <TouchAble onPress={() => console.warn('Not implemented')}>
             <View style={details.listItem}>
               <MaterialIcon
                 name='blank'
@@ -117,7 +117,7 @@ const Details = props => {
             </View>
           </TouchAble>
           <Divider />
-          <TouchAble>
+          <TouchAble onPress={() => console.warn('Not implemented')}>
             <View style={details.listItem}>
               <MaterialIcon
                 name='blank'
@@ -129,7 +129,7 @@ const Details = props => {
             </View>
           </TouchAble>
           <Divider />
-          <TouchAble>
+          <TouchAble onPress={() => console.warn('Not implemented')}>
             <View style={details.listItem}>
               <MaterialIcon
                 name='clock-outline'
@@ -143,7 +143,7 @@ const Details = props => {
             </View>
           </TouchAble>
           <Divider />
-          <TouchAble>
+          <TouchAble onPress={() => console.warn('Not implemented')}>
             <View style={{...details.listItem, paddingBottom: 10}}>
               <MaterialIcon name='library' size={25} color='grey' style={details.listItemImage}/>
               <Text style={details.listItemText}>{'Menu'}</Text>
@@ -154,7 +154,7 @@ const Details = props => {
       </ScrollView>
       <View>
         <Divider/>
-        <TouchAble>
+        <TouchAble onPress={() => console.warn('Not implemented')}>
           <Text style={details.footerText}>
             {'VIEW OFFERS'}
           </Text>
