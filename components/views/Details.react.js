@@ -3,6 +3,7 @@ import {ScrollView, View, ImageBackground, Text, Image, Linking, Platform} from 
 import Icon from 'react-native-vector-icons/Ionicons'
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import PropTypes from 'prop-types'
+import MapView, {Marker} from 'react-native-maps'
 import TouchAble from './TouchAble.react'
 import Ratings from './Rating.react'
 import Divider from './Divider.react'
@@ -26,7 +27,7 @@ const openLink = url => {
 
 const Details = props => {
   const {
-    image_url, distance, isFav, categories, rating, name, is_closed, phone, url, coordinates
+    id, image_url, distance, isFav, categories, rating, name, is_closed, phone, url, coordinates
   } = props.data
   const {latitude = 0, longitude = 0} = coordinates
 
@@ -148,6 +149,22 @@ const Details = props => {
               <MaterialIcon name='link' size={25} color='grey' style={marginLeftAuto}/>
             </View>
           </TouchAble>
+          <Divider />
+          <MapView
+            initialRegion={{
+              latitude: 37.78825,
+              longitude: -122.4324,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421
+            }}>
+            <Marker
+              draggable
+              key={id}
+              coordinate={`${latitude},${longitude}`}
+              title={name}
+              description={''}
+            />
+          </MapView>
         </View>
       </ScrollView>
       <View>
