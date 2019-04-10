@@ -15,14 +15,14 @@ const RestaurantCard = props => {
     <TouchAble
       style={restaurantCard.container}
       onPress={() => {
-        props.goto('Details', {name: 'Jane'})
+        props.goto('Details', {item: props.item})
       }}>
       <View>
         <ImageBackground
           source={{uri: image_url}}
           imageStyle={{borderTopLeftRadius: 5, borderTopRightRadius: 5}}
           style={restaurantCard.imageBkg}>
-          <Text style={restaurantCard.distance}>{`${distance.toFixed(1)} km`}</Text>
+          <Text style={restaurantCard.distance}>{`${(distance / 1000).toFixed(1)} km`}</Text>
           <Icon
             style={marginLeftAuto}
             name={props.isFav ? 'ios-heart' : 'ios-heart-empty'}
@@ -33,7 +33,9 @@ const RestaurantCard = props => {
         <View style={restaurantCard.caption}>
           <View style={restaurantCard.captionHeading}>
             <Text style={restaurantCard.main}>{trimText(name)}</Text>
-            <Text style={restaurantCard.sub}>{categories[0].title.toUpperCase()}</Text>
+            <Text style={restaurantCard.sub}>{
+              categories[0] ? categories[0].title.toUpperCase() : ''}
+            </Text>
           </View>
           <Ratings rating={rating} />
         </View>
@@ -45,7 +47,7 @@ const RestaurantCard = props => {
 RestaurantCard.propTypes = {
   item: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    image_url: PropTypes.string.isRequired,
+    image_url: PropTypes.string,
     rating: PropTypes.number.isRequired,
     distance: PropTypes.number.isRequired,
     categories: PropTypes.array.isRequired

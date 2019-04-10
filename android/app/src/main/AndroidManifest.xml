@@ -2,6 +2,7 @@
   package="com.restuarant">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
       android:name=".MainApplication"
@@ -21,6 +22,12 @@
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+      <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyCCPg_mGlmDdru7ORQEayyn_s_zqBxwPW8"/>
+      <uses-library
+        android:name="org.apache.http.legacy"
+        android:required="false" />
     </application>
 
 </manifest>

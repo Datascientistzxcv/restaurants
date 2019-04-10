@@ -1,5 +1,6 @@
 import {createStackNavigator, createAppContainer} from 'react-navigation'
 import Listing from './containers/Listing.react'
+import Details from './containers/Details.react'
 
 const MainNavigator = createStackNavigator({
   Home: {
@@ -9,13 +10,13 @@ const MainNavigator = createStackNavigator({
       headerLeft: null
     }
   },
-  // Details: {
-  //   screen: Details,
-  //   navigationOptions: {
-  //     headerStyle: {display:"none"},
-  //     headerLeft: null
-  //   }
-  // }
+  Details: {
+    screen: Details,
+    navigationOptions: {
+      headerStyle: {display:"none"},
+      headerLeft: null
+    }
+  }
 },
 {
   initialRouteName: 'Home'

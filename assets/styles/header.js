@@ -4,7 +4,7 @@ const {width, height} = Dimensions.get('window')
 
 const header = StyleSheet.create({
   container: {
-    backgroundColor: 'orange',
+    backgroundColor: '#FCAC0B',
     height: (height * 0.15),
     width,
     padding: 25,

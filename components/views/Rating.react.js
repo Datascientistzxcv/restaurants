@@ -13,8 +13,8 @@ const showRatings = rating => (
           'md-star' : item - rating <= 0.8 ? 'md-star-half' : 'md-star-outline'
       }
       size={15}
-      color='orange'
-      style={{margin: 5}}
+      color='#F9A70A'
+      style={{margin: 1}}
     />
   ))
 )
