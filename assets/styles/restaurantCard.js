@@ -26,7 +26,8 @@ const restaurantCard = StyleSheet.create({
     borderTopLeftRadius: 10,
     flexDirection: 'row',
     padding: 10,
-    alignItems: 'baseline'
+    alignItems: 'baseline',
+    backgroundColor: 'gray'
   },
   captionHeading: {
     flexDirection: 'row'
@@ -49,7 +50,8 @@ const restaurantCard = StyleSheet.create({
   ratingTitle: {
     color:'orange',
     fontWeight:'bold',
-    fontSize: 18
+    fontSize: 18,
+    marginRight: 5
   },
   distance: {
     color: 'white',

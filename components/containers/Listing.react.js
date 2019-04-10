@@ -15,6 +15,7 @@ class ListingContainer extends Component {
 
     try {
       const data = await request(`/search?location=NYC&term=${searchTerm}`, 'GET', null) //eslint-disable-line
+      console.log('--+++++-', data)
       this.setState({
         data: data.businesses
       })
