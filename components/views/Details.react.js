@@ -107,9 +107,8 @@ const Details = props => {
           <Divider />
           <TouchAble onPress={() => console.warn('Not implemented')}>
             <View style={details.listItem}>
-              <MaterialIcon
-                name='blank'
-                size={25} color='grey'
+              <Image
+                source={require('../../assets/images/opentable.jpg')}
                 style={details.listItemImage}
               />
               <Text style={details.listItemText}>{'Book a table with Opentable'}</Text>
@@ -119,9 +118,8 @@ const Details = props => {
           <Divider />
           <TouchAble onPress={() => console.warn('Not implemented')}>
             <View style={details.listItem}>
-              <MaterialIcon
-                name='blank'
-                size={25} color='grey'
+              <Image
+                source={require('../../assets/images/uber.png')}
                 style={details.listItemImage}
               />
               <Text style={details.listItemText}>{'Request a ride with Uber'}</Text>

@@ -77,7 +77,9 @@ const listing = StyleSheet.create({
     fontWeight: 'bold'
   },
   listItemImage: {
-    marginRight: 15
+    marginRight: 15,
+    width: 25,
+    height: 25
   }
 })
 
